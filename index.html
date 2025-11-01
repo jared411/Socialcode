@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SocialCode — Instant idea -> landing</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050a12'/%3E%3Ctext x='14' y='42' font-size='28' fill='%236ec1ff'%3ESC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">SC</div>
+        <div>
+          <h1>SocialCode</h1>
+          <div class="tag">Turn an idea into a live mini-landing — instantly</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="exportAll" class="btn">Export All</button>
+        <button id="publishHelp" class="btn quiet">How to publish</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="left card">
+        <h2>Create a new micro-landing</h2>
+        <label>1) Name your idea</label>
+        <input id="title" placeholder="e.g. ChillList — short playlists for studying" />
+
+        <label>2) One-line pitch</label>
+        <input id="pitch" placeholder="e.g. Curated 10-minute playlist generator for focus" />
+
+        <label>3) Describe it in 1–2 sentences</label>
+        <textarea id="desc" rows="4" placeholder="Describe the idea, target user and benefit"></textarea>
+
+        <div class="controls">
+          <select id="template">
+            <option value="simple">Simple Classic</option>
+            <option value="bold">Bold Promo</option>
+            <option value="split">Split Feature</option>
+          </select>
+          <button id="generate" class="btn primary">Generate Landing</button>
+        </div>
+
+        <div class="small muted">Generated pages are single-file HTML you can download and publish anywhere (Netlify, GitHub Pages, Vercel).</div>
+      </section>
+
+      <aside class="right card">
+        <h3>Preview</h3>
+        <div id="preview" class="preview empty">
+          <div class="hint">No landing yet — fill the form and press Generate</div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button id="downloadBtn" class="btn" disabled>Download HTML</button>
+          <button id="copyBtn" class="btn" disabled>Copy HTML</button>
+        </div>
+
+        <hr style="margin:12px 0;border-color:rgba(255,255,255,0.04)">
+
+        <h4>Saved Pages</h4>
+        <div id="savedList" class="savedList"></div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <div>Created by SocialCode • Life•Glitch Studio</div>
+      <div class="small muted">Silent demo • export your ideas as public microsites</div>
+    </footer>
+  </div>
+
+  <template id="landingTemplateSimple">
+    <section class="landing-simple">
+      <header><h1 id="L_TITLE"></h1><p id="L_PITCH"></p></header>
+      <main><p id="L_DESC"></p></main>
+      <footer>Built with SocialCode</footer>
+    </section>
+    <style>
+      body{margin:0;font-family:Inter,system-ui;background:#071026;color:#e6f6ff}
+      .landing-simple{max-width:900px;margin:40px auto;padding:28px;background:#071830;border-radius:12px}
+      .landing-simple h1{font-size:36px;margin:0 0 8px;color:#6ec1ff}
+      .landing-simple p{color:#cfe9ff;line-height:1.5}
+      .landing-simple footer{margin-top:18px;color:#9fb4c9;font-size:13px}
+    </style>
+  </template>
+
+  <template id="landingTemplateBold">
+    <section class="landing-bold">
+      <div class="hero"><h1 id="L_TITLE"></h1><p id="L_PITCH"></p></div>
+      <div class="desc"><p id="L_DESC"></p></div>
+    </section>
+    <style>
+      body{margin:0;font-family:Inter,system-ui;background:linear-gradient(180deg,#020316,#071126);color:#f0fbff}
+      .landing-bold{padding:40px;text-align:center;min-height:60vh}
+      .landing-bold .hero{background:linear-gradient(90deg,#6ec1ff55,#7b61ff33);padding:40px;border-radius:12px}
+      .landing-bold h1{font-size:44px;margin:0;color:#001022;text-shadow:0 6px 20px rgba(110,193,255,0.08)}
+      .landing-bold p{margin-top:12px;color:#073047}
+      .landing-bold .desc{max-width:760px;margin:28px auto;background:rgba(0,0,0,0.12);padding:18px;border-radius:10px}
+    </style>
+  </template>
+
+  <template id="landingTemplateSplit">
+    <section class="landing-split" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;padding:28px">
+      <div style="flex:1"><h1 id="L_TITLE"></h1><p id="L_PITCH"></p></div>
+      <div style="flex:1"><p id="L_DESC"></p></div>
+    </section>
+    <style>
+      body{margin:0;font-family:Poppins,system-ui;background:#071026;color:#e6f6ff}
+      .landing-split h1{color:#6ec1ff;margin:0 0 8px}
+      .landing-split p{color:#bcdff6}
+    </style>
+  </template>
+
+<script src="script.js"></script>
+</body>
+              </html>
