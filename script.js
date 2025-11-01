@@ -86,3 +86,27 @@ document.getElementById('exportAll').addEventListener('click', ()=>{
 document.getElementById('publishHelp').addEventListener('click', ()=>{
   alert('Quick publish: create a GitHub repo named your-idea and add the downloaded HTML as index.html, then enable GitHub Pages (branch main / root).');
 });
+const generateBtn = document.getElementById('generateBtn');
+const ideaInput = document.getElementById('ideaInput');
+const generatorCard = document.getElementById('generatorCard');
+const resultCard = document.getElementById('resultCard');
+const ideaTitle = document.getElementById('ideaTitle');
+const ideaDesc = document.getElementById('ideaDesc');
+const resetBtn = document.getElementById('resetBtn');
+
+generateBtn.addEventListener('click', () => {
+  const idea = ideaInput.value.trim();
+  if (!idea) return alert('Please describe your idea first!');
+
+  // Simple AI-style generation logic
+  ideaTitle.innerText = idea;
+  ideaDesc.innerText = `“${idea}” could become your next viral micro-site. SocialCode builds it instantly with your style, brand, and tone — ready to share.`;
+
+  generatorCard.classList.add('hidden');
+  resultCard.classList.remove('hidden');
+});
+
+resetBtn.addEventListener('click', () => {
+  resultCard.classList.add('hidden');
+  generatorCard.classList.remove('hidden');
+});
