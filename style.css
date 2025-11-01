@@ -26,3 +26,128 @@ input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid
 /* subtle animations */
 .logo{box-shadow:0 8px 28px rgba(110,193,255,0.08)}
 .btn:hover{transform:translateY(-2px);transition:all .18s}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #050505;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, #00ffff22, transparent 60%),
+              radial-gradient(circle at bottom right, #0077ff33, transparent 70%);
+  animation: pulse 6s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% { filter: blur(40px); opacity: 0.8; }
+  100% { filter: blur(60px); opacity: 1; }
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 70px;
+  filter: drop-shadow(0 0 10px #0ff);
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+}
+
+h1 span {
+  color: #0ff;
+  text-shadow: 0 0 12px #0ff;
+}
+
+.tagline {
+  color: #aaa;
+  font-size: 1rem;
+  margin-top: 6px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px auto;
+  box-shadow: 0 0 20px #00ffff11;
+  transition: all 0.5s ease;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  color: #fff;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+}
+
+button {
+  margin-top: 15px;
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ffff66;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffffaa;
+}
+
+.hidden {
+  display: none;
+}
+
+#ideaTitle {
+  font-size: 1.6rem;
+  color: #0ff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #0ff;
+}
+
+#ideaDesc {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #666;
+  }
